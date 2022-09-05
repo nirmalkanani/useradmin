@@ -20,8 +20,7 @@ import {
 import { RiPencilLine } from "react-icons/ri";
 import { BiCog } from "react-icons/bi";
 import 'react-pro-sidebar/dist/css/styles.css';
-import { Nav } from "../../Routes/Routes";
-import { Link } from "react-router-dom";
+import { Nav_Route } from "../Nav/Nav_Route";
 
 const Sidebar = () => {
 
@@ -48,16 +47,16 @@ const Sidebar = () => {
           </SidebarHeader>
           <SidebarContent>
             <Menu iconShape="square">
-                {/* {
-                    Nav.map((element,index) => 
-                        <MenuItem  icon={<FiHome />} key={index}><Link to={element.path}>{element.name}</Link></MenuItem>
-                    )
-                } */}
-              <MenuItem active={true} icon={<FiHome />}>Home</MenuItem>
+              {
+                Nav_Route.map((element, index) => 
+                <MenuItem icon={<FiHome />}>{element.name}</MenuItem>
+                )
+              }
+              {/* <MenuItem active={true} icon={<FiHome />}>Home</MenuItem>
               <MenuItem icon={<FaList />}>Category</MenuItem>
               <MenuItem icon={<FaRegHeart />}>Favourite</MenuItem>
               <MenuItem icon={<RiPencilLine />}>Author</MenuItem>
-              <MenuItem icon={<BiCog />}>Settings</MenuItem>
+              <MenuItem icon={<BiCog />}>Settings</MenuItem> */}
             </Menu>
           </SidebarContent>
           <SidebarFooter>
